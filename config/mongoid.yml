@@ -1,0 +1,16 @@
+development:
+  sessions:
+    default:
+      hosts:
+        - localhost:27017
+      database: eeawebinar_development
+      identity_map_enabled: true
+
+test:
+  sessions:
+    default:
+      hosts:
+        - localhost:27017
+      database: eeawebinar_test
+      identity_map_enabled: true
+
