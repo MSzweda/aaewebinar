@@ -21,5 +21,9 @@ module Aaewebinar
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.autoload_paths = %W(#{config.root}/apps/internal_api/lib)
+    config.before_initialize do
+      InternalApi::Engine.instance.initializers.map{ |e| e.run Rails.application }
+    end
   end
 end
